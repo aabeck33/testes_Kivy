@@ -1,0 +1,23 @@
+<BotaoA@Button>:
+    text: "Botão A"
+
+<BotaoB@Button>:
+    text: "Botão B"
+    opacity: 0.1
+
+
+<MinhaTela@BoxLayout>:
+    orientation: "vertical"
+
+    Button:
+        id: bt1
+        text: "Função Self"
+        on_press: self.funcSelf()
+    Button:
+        id: bt2
+        text: "Função Root"
+        on_press: root.funcRoot()
+    Button:
+        id: bt3
+        text: "Função APP"
+        on_press: app.funcApp()

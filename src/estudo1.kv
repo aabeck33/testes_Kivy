@@ -1,0 +1,21 @@
+#:set x 10
+#:import o os
+
+#Button:
+    #text: o.getcwd()
+    #text: str(x)
+
+
+<MeuBotao@Button>:
+    text: "botão"
+
+<Tela1@BoxLayout>:
+    orientation: "horizontal"
+    MeuBotao:
+    MeuBotao:
+    MeuBotao:
+
+BoxLayout:
+    Tela1:
+    Tela1:
+        orientation: "vertical"

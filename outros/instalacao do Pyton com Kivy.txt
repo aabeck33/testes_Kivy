@@ -1,0 +1,169 @@
+yum groupinstall "Development Tools"
+yum install epel-release xclip
+yum -y install python-pip python36u-pip git python python36u python-devel python36u-devel python-imaging python-tools python36u-tools
+
+yum localinstall --nogpgcheck https://download1.rpmfusion.org/free/el/rpmfusion-free-release-7.noarch.rpm https://download1.rpmfusion.org/nonfree/el/rpmfusion-nonfree-release-7.noarch.rpm
+
+yum install ffmpeg ffmpeg-devel
+
+yum install \
+    make \
+    mercurial \
+    automake \
+    gcc \
+    gcc-c++ \
+    SDL_ttf-devel \
+    SDL_mixer-devel \
+    khrplatform-devel \
+    mesa-libGLES \
+    mesa-libGLES-devel \
+    gstreamer-plugins-good \
+    gstreamer \
+    gstreamer-python \
+    mtdev-devel \
+    python-devel \
+    python-pip
+	
+yum install SDL SDL-devel portmidi portmidi-devel ffmpeg ffmpeg-devel SDL_image-devel SDL_mixer-devel SDL_ttf-devel libjpeg-turbo-devel
+
+yum-config-manager --add-repo https://download.sublimetext.com/rpm/dev/x86_64/sublime-text.repo
+
+yum install sublime-text
+cd ~/.config/sublime-text-3/Packages/
+git clone https://github.com/srusskih/SublimeJEDI.git "Jedi - Python autocompletion"
+
+yum install wireshark
+yum install wireshark-gnome
+
+sudo pip install --upgrade pip virtualenv setuptools
+sudo pip nstall virtualenvwrapper
+
+no .bash.rc do usuário
+export WORKON_HOME=.virtualenvs
+source /usr/bin/virtualwrapper.sh
+
+makevirtualenv -p /usr/bin/python2.7 k27
+(...)
+
+pip install numpy
+pip install Cython==0.25.2
+pip install pillow
+
+from PIL.Image import core as _imaging
+from PIL.Image import core as image
+
+pip install hg+http://bitbucket.org/pygame/pygame
+pip install -U pygments docutils watchdog jedi gitpython six kivy-garden
+
+opcionais:
+pip install git+https://github.com/kivy/plyer.git@master
+pip install git+https://github.com/kivy/buildozer.git@master
+
+pip install kivy
+
+garden install mapview
+garden install xpopup
+
+pip3 install scapy-python3
+pip3 install ipython
+pip3 install jupyter
+pip3 install jupyterthemes
+pip3 install pyqt5
+
+copiar os arquivos:
+https://github.com/kivy/kivy
+https://github.com/kivy/kivy-designer
+
+
+
+Para executar o IDLE ->  $ python -m idlelib&
+Para executar o Kivy-Designer -> python -m designer&
+Para executar o Pycharm -> ./pycharm.sh&
+
+
+
+
+INSTALAÇÃO do R
+yum groupinstall "Development Tools"
+yum install epel-release -y
+yum install R -y
+wget  https://download2.rstudio.org/rstudio-server-rhel-1.0.44-x86_64.rpm
+yum install --nogpgcheck rstudio-server-rhel-1.0.44-x86_64.rpm
+systemctl status rstudio-server.service
+sudo -i R
+install.packages('zoo')
+install.packages('xts')
+install.packages('txtplot')
+install.packages('curl')
+install.packages('TTR')
+install.packages('quantmod')
+library('quantmod')
+data <- new.env()
+getSymbols('RHT',data)
+plot(data$RHT)
+
+Para acessar o server -> http://youriporhostname:8787/
+
+
+Chrome:
+vi /etc/yum.repos.d/google-chrome.repo
+[google-chrome]
+name=google-chrome
+baseurl=http://dl.google.com/linux/chrome/rpm/stable/$basearch
+enabled=1
+gpgcheck=1
+gpgkey=https://dl-ssl.google.com/linux/linux_signing_key.pub
+
+yum install google-chrome-stable
+google-chrome&
+
+Corrigir erro do R no Pycharm:
+Rscript /home/poku/.PyCharm2017.1/config/plugins/R4Intellij/skeletonize_package.R tcltk tcltk.skeleton
+
+
+
+outros progrmas:
+Wireshark -> sudo wireshark&
+Sublime Text -> Fica diponível em Aplicativos > Desenvolvimento
+Ncat -> sudo nc -vlp <porta>
+	sudo -vlp 443
+sudo /home/abeck/.virtualenvs/k36/bin/ipython3
+Abrir um server http para testes:
+sudo /home/abeck/.virtualenvs/k36/bin/python3 -m http.server --bind 127.0.0.1 80
+
+
+jt -t <theme-name>
+onedork | grade3 | oceans16 | chesterish | monokai | solarizedl | solarizedd
+~/.virtualenvs/k35/bin/jupyter notebook&
+
+
+
+---------------------------------------------------------------------------------------------------------------------
+DEVICE="eth0"
+BOOTPROTO="static"
+IPADDR="192.168.235.166"
+BROADCAST="192.168.235.255"
+NETMASK="255.255.255.0"
+NETWORK="192.168.235.0"
+GATEWAY="192.168.235.2"
+DNS1="8.8.8.8"
+DNS2="8.8.4.4"
+HWADDR="00:0C:29:59:79:B9"
+IPV6INIT="yes"
+NM_CONTROLLED="yes"
+ONBOOT="yes"
+TYPE="Ethernet"
+UUID="72e67be9-d8a6-49bd-acaf-18fad2044de3"
+
+
+
+dpi = Tamanho físico da tela / Resolução em pixels
+
+dt (Densidade da tela) = Largura | Altura em Pixels / largura | Altura em Polegadas
+	Ipixel / iPolegadas
+
+dp (Pixel independente de Densidade) = Largura em Pixel * 160 / Densidade da tela
+	Ipixel / dt
+
+dp = sp (Escala Independente de Pixel) -> Usado mais para definir tamanho de fontes (acessibilidade)
+
